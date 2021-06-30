@@ -1,8 +1,5 @@
-.button-container {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
+li {
+  display: inline;
 }
 
 button {
@@ -12,10 +9,25 @@ button {
   border: none;
 }
 
+/* button classes */
+
+.button-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .light {
-  background: #a6f3e5;
+  background: #b5e8de;
 }
 
 .dark {
-  background: purple;
+  background: #432c85;
+}
+
+/* navbar classes */
+
+.navbar {
+  margin: 2em;
 }

@@ -3,9 +3,10 @@ import React from "react";
 const NavBar = () => {
   return (
     <div>
-      <p>link</p>
-      <p>link</p>
-      <p>link</p>
+      <ul>
+        <li className="navbar">link</li>
+        <li className="navbar">link</li>
+      </ul>
     </div>
   );
 };
