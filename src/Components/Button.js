@@ -1,9 +1,9 @@
 import React from "react";
 
-const Button = ({ text }) => {
+const Button = ({ text, styleMode }) => {
   return (
-    <div className="button-container">
-      <button>{text}</button>
+    <div>
+      <button className={`${styleMode}`}>{text}</button>
     </div>
   );
 };
