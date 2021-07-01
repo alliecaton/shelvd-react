@@ -9,6 +9,29 @@ button {
   border: none;
 }
 
+/* Home Container classes */
+
+.home-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.5fr auto;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  box-shadow: 0 0 2rem rgba(0, 145, 255, 0.1);
+  justify-items: center;
+  padding: 2rem;
+  margin: 2rem;
+  width: 20rem;
+  height: 25rem;
+  background-color: white;
+  border-radius: 1.75rem;
+  animation: 3s ease-in-out 0ms 1 fadein;
+}
+
 /* button classes */
 
 .button-container {

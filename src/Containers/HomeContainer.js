@@ -1,11 +1,9 @@
 import React from "react";
-import NavBar from "../Components/NavBar";
 import RandomBook from "../Components/RandomBook";
 
 const HomeContainer = ({ mode }) => {
   return (
-    <div>
-      <NavBar />
+    <div className="home-container">
       <RandomBook />
     </div>
   );

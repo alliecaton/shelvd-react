@@ -4,12 +4,15 @@ import Button from "./Button";
 const RandomBook = () => {
   const [bookData] = useState([]);
 
+  const fetchBook = () => {
+    // fetch request to API.
+  };
+
   return (
-    <div>
-      <p>this is the book</p>
-      <p>{bookData}</p>
+    <>
+      <div className="book-card">this is the book</div>
       <Button text={"Get Random Book!!"} />
-    </div>
+    </>
   );
 };
 
