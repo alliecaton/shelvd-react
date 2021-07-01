@@ -43,7 +43,14 @@ button {
 }
 
 .light {
-  background: #b5e8de;
+  background: #e3fff9;
+  box-shadow: 0 0.5rem 2rem rgba(106, 0, 255, 0.2);
+}
+
+.light:hover {
+  cursor: pointer;
+  box-shadow: 0 0.5rem 2rem rgba(106, 0, 255, 0.5);
+  margin-top: -10px;
 }
 
 .dark {
