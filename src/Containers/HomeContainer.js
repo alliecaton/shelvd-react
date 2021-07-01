@@ -1,12 +1,12 @@
 import React from "react";
-import Button from "../Components/Button";
 import NavBar from "../Components/NavBar";
+import RandomBook from "../Components/RandomBook";
 
 const HomeContainer = ({ mode }) => {
   return (
     <div>
       <NavBar />
-      <Button text={"Get Random Book"} styleMode={mode} />
+      <RandomBook />
     </div>
   );
 };
