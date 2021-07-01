@@ -9,20 +9,16 @@ const RandomBook = () => {
 	});
 
 	const fetchBook = () => {
-		fetch('https://www.googleapis.com/books/v1/volumes?q=fiction+subject')
+		fetch(
+			'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=1Wdgde9tUVE2oGAgQdRsaQkBi4SXqPF3'
+		)
 			.then(resp => resp.json())
 			.then(json => {
-				let num = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-				let index = Math.floor(
-					Math.random() * (json.totalItems / 10 - 1 + 1) + 1
-				);
-				fetch(
-					`https://www.googleapis.com/books/v1/volumes?q=fiction+subject&startIndex=${index}&maxResults=3`
-				)
-					.then(resp => resp.json())
-					.then(json => {
-						setState(json.items[num]);
-					});
+				console.log(json);
+				// let num = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+				// let index = Math.floor(
+				// 	Math.random() * (json.totalItems / 10 - 1 + 1) + 1
+				// );
 			});
 	};
 
