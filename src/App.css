@@ -43,13 +43,14 @@ button {
 }
 
 .light {
-  background: #e3fff9;
-  box-shadow: 0 0.5rem 2rem rgba(106, 0, 255, 0.2);
+  background: #f3fffe;
+  border: 2px solid rgba(180, 244, 238, 0.735);
+  box-shadow: 0 0.5rem 2rem rgba(106, 0, 255, 0.3);
 }
 
 .light:hover {
   cursor: pointer;
-  box-shadow: 0 0.5rem 2rem rgba(106, 0, 255, 0.5);
+  box-shadow: 0 0.5rem 2rem rgba(106, 0, 255, 0.3);
   margin-top: -10px;
 }
 
