@@ -2,17 +2,27 @@ import React, { useState } from "react";
 import Button from "./Button";
 
 const RandomBook = () => {
-  const [bookData, setState] = useState([]);
+  const [bookData, setState] = useState(null);
 
   const fetchBook = () => {
     fetch("https://www.googleapis.com/books/v1/volumes?q=fiction+subject")
       .then((resp) => resp.json())
-      .then((json) => setState(json));
+      .then((json) => {
+        fetch(
+          "https://www.googleapis.com/books/v1/volumes?q=fiction+subject&startIndex=300"
+        );
+      });
   };
-  console.log("this is the state", bookData.items);
+
+  //   const getRandom = (data) => {
+  //     let num = Math.floor(Math.random() * (data.totalItems - 1) + 1);
+  //     setState(data.items[num]);
+  //   };
+
+  console.log(bookData);
   return (
     <>
-      <div className="book-card">{bookData}</div>
+      <div className="book-card"></div>
       <Button text={"Get Random Book!!"} onClick={fetchBook} />
     </>
   );
