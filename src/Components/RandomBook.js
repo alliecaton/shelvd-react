@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 const RandomBook = () => {
   const [bookData] = useState([]);
 
   const fetchBook = () => {
-    // fetch request to API.
+    fetch("https://www.googleapis.com/books/v1/volumes?q=fiction+subject")
+      .then((resp) => resp.json())
+      .then((json) => console.log(json));
   };
 
   return (
     <>
-      <div className="book-card">this is the book</div>
-      <Button text={"Get Random Book!!"} />
+      <div className="book-card">{bookData}</div>
+      <Button text={"Get Random Book!!"} onClick={fetchBook} />
     </>
   );
 };
