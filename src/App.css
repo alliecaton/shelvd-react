@@ -16,6 +16,10 @@ button {
 	vertical-align: middle;
 }
 
+.searchbar {
+	display: inline;
+}
+
 /* img.logo-img {
 	padding-right: 1em;
 	display: inline;
