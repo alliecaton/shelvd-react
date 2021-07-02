@@ -6,7 +6,6 @@ export const fetchResults = query => {
 			.then(r => r.json())
 			.then(json => {
 				const data = { query: query, json: json }
-				console.log(query, data)
 				dispatch({ type: 'GET_RESULTS', payload: data })
 			})
 	}

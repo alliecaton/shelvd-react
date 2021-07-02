@@ -1,7 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-const BookThumbCard = () => {
-	return <div>book</div>;
-};
+const BookThumbCard = props => {
+	console.log(props)
+	return (
+		<div>
+			<ul>
+				<li>{props.title}</li>
+			</ul>
+		</div>
+	)
+}
 
-export default BookThumbCard;
+export default BookThumbCard

@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import BookThumbCard from '../components/BookThumbCard'
 import { connect } from 'react-redux'
 
 const BookListContainer = props => {
-	// const queryResults = useSelector(state => state.queryResults)
-
 	console.log('book container', props.queryResults)
-	return (
-		<div>
-			<BookThumbCard />
-			<BookThumbCard />
-			<BookThumbCard />
-			<BookThumbCard />
-		</div>
-	)
+
+	const renderResults = () => {
+		return props.queryResults.map(result => (
+			<BookThumbCard key={result.id} title={result.volumeInfo.title} />
+		))
+	}
+
+	return <div>{renderResults()}</div>
 }
 
 const mapStateToProps = state => ({
