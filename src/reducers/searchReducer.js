@@ -11,13 +11,13 @@ const searchReducer = (
 			return {
 				...state,
 				query: action.payload.query,
-				queryResults: action.payload.queryResults,
+				queryResults: [...action.payload.json.items],
 				loading: false,
-			};
+			}
 
 		default:
-			return state;
+			return state
 	}
-};
+}
 
-export default searchReducer;
+export default searchReducer

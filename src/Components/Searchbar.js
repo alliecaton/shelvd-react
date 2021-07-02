@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import BookListContainer from '../containers/BookListContainer'
 import { useHistory } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { fetchResults } from '../actions/searchActions'
 
-const Searchbar = () => {
+const Searchbar = props => {
 	let history = useHistory()
 	const [state, setState] = useState({
 		query: '',
-		queryResults: [],
 	})
 
 	const handleInput = e => {
@@ -20,6 +20,7 @@ const Searchbar = () => {
 	const handleSubmit = e => {
 		e.preventDefault()
 		history.push('/books')
+		props.fetchResults(state.query)
 	}
 
 	return (
@@ -32,4 +33,8 @@ const Searchbar = () => {
 	)
 }
 
-export default Searchbar
+const mapDispatchToProps = dispatch => ({
+	fetchResults: query => dispatch(fetchResults(query)),
+})
+
+export default connect(null, mapDispatchToProps)(Searchbar)
