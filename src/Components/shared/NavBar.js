@@ -1,7 +1,6 @@
-import React from 'react';
-import image from '../images/book.png';
-
-import { Link } from 'react-router-dom';
+import React from 'react'
+import image from '../../images/book.png'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
 	return (
@@ -20,7 +19,7 @@ const NavBar = () => {
 				<li></li>
 			</ul>
 		</div>
-	);
-};
+	)
+}
 
-export default NavBar;
+export default NavBar

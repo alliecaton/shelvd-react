@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchResults } from '../actions/searchActions'
+import { fetchResults } from '../../actions/searchActions'
 
 const Searchbar = props => {
 	let history = useHistory()

@@ -1,14 +1,21 @@
-import './App.css';
-import React, { useState } from 'react';
-import HomeContainer from './containers/HomeContainer';
-import NavBar from './components/NavBar.js';
-import SearchContainer from './containers/SearchContainer';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import BookListContainer from './containers/BookListContainer';
+import './App.css'
+import React, { useState } from 'react'
+import HomeContainer from './containers/HomeContainer'
+import NavBar from './components/shared/NavBar.js'
+import SearchContainer from './containers/SearchContainer'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import BookListContainer from './containers/BookListContainer'
 
 function App() {
-	const [mode] = useState('light');
+	const [light, setState] = useState(true)
 
+	const changeMode = () => {
+		setState(prevState => ({
+			light: !prevState.light,
+		}))
+	}
+
+	console.log(light)
 	return (
 		<div className='App'>
 			<Router>
@@ -16,7 +23,7 @@ function App() {
 				<SearchContainer />
 				<Switch>
 					<Route exact path='/'>
-						<HomeContainer mode={mode} />
+						<HomeContainer light={light} changeMode={changeMode} />
 					</Route>
 					<Route path='/books'>
 						<BookListContainer />
@@ -24,7 +31,7 @@ function App() {
 				</Switch>
 			</Router>
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App
