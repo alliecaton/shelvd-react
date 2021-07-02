@@ -5,7 +5,14 @@ const BookThumbCard = props => {
 	return (
 		<div>
 			<ul>
-				<li>{props.title}</li>
+				<li>
+					<div className='book-thumb'>
+						<h3>{props.title}</h3>
+						<p>{props.author}</p>
+						<img src={props.img} />
+					</div>
+				</li>
+				<li></li>
 			</ul>
 		</div>
 	)

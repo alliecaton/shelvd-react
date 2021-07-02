@@ -14,7 +14,6 @@ const Searchbar = props => {
 			...prevState,
 			query: e.target.value,
 		}))
-		console.log(state.query)
 	}
 
 	const handleSubmit = e => {

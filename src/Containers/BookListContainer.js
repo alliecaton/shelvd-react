@@ -7,11 +7,16 @@ const BookListContainer = props => {
 
 	const renderResults = () => {
 		return props.queryResults.map(result => (
-			<BookThumbCard key={result.id} title={result.volumeInfo.title} />
+			<BookThumbCard
+				key={result.id}
+				title={result.volumeInfo.title}
+				author={result.volumeInfo.authors[0] || 'no author'}
+				img={result.volumeInfo.imageLinks.smallThumbnail || 'no link'}
+			/>
 		))
 	}
 
-	return <div>{renderResults()}</div>
+	return <div className='book-container'>{renderResults()}</div>
 }
 
 const mapStateToProps = state => ({

@@ -32,6 +32,32 @@ button {
 	justify-items: center;
 }
 
+.book-container {
+	padding-top: 2rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+.book-thumb {
+	display: grid;
+	box-shadow: 0 0 2rem rgba(0, 145, 255, 0.1);
+	justify-items: center;
+	padding: 2rem;
+	margin: 2rem;
+	width: 10rem;
+	height: auto;
+	background-color: white;
+	border-radius: 1.75rem;
+	animation: 3s ease-in-out 0ms 1 fadein;
+}
+
+.book-thumb:hover {
+	cursor: pointer;
+	box-shadow: 0 0.5rem 1rem rgba(245, 220, 155, 0.5);
+	margin-top: -1px;
+}
+
 .book-card {
 	display: grid;
 	grid-template-columns: 1fr;
