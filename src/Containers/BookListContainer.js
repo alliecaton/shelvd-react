@@ -1,7 +1,11 @@
-import React from 'react';
-import BookThumbCard from '../components/BookThumbCard';
+import React, { useEffect } from 'react'
+import BookThumbCard from '../components/BookThumbCard'
+import { connect } from 'react-redux'
 
-const BookListContainer = () => {
+const BookListContainer = props => {
+	// const queryResults = useSelector(state => state.queryResults)
+
+	console.log('book container', props.queryResults)
 	return (
 		<div>
 			<BookThumbCard />
@@ -9,7 +13,11 @@ const BookListContainer = () => {
 			<BookThumbCard />
 			<BookThumbCard />
 		</div>
-	);
-};
+	)
+}
 
-export default BookListContainer;
+const mapStateToProps = state => ({
+	queryResults: state.searchReducer.queryResults,
+})
+
+export default connect(mapStateToProps)(BookListContainer)
