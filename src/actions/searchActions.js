@@ -1,11 +1,10 @@
 export const fetchResults = query => {
 	return dispatch => {
-		fetch(
-			`https://www.googleapis.com/books/v1/volumes?q=${query}+inTitle&printType=books&orderBy=relevance`
-		)
+		fetch('http://localhost:3001/results')
 			.then(r => r.json())
 			.then(json => {
-				const data = { query: query, json: json }
+				const data = { query: query, json: json.results }
+				console.log(json)
 				dispatch({ type: 'GET_RESULTS', payload: data })
 			})
 	}

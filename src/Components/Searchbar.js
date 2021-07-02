@@ -21,6 +21,10 @@ const Searchbar = props => {
 		e.preventDefault()
 		history.push('/books')
 		props.fetchResults(state.query)
+		setState(prevState => ({
+			...prevState,
+			query: '',
+		}))
 	}
 
 	return (
