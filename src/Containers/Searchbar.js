@@ -17,7 +17,7 @@ const Searchbar = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		fetch(
-			'https://www.googleapis.com/books/v1/volumes?q=${query}+inTitle&printType=books&orderBy=relevance'
+			`https://www.googleapis.com/books/v1/volumes?q=${state.query}+inTitle&printType=books&orderBy=relevance`
 		)
 			.then(resp => resp.json())
 			.then(json => {

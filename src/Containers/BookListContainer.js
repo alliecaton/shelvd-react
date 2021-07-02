@@ -1,7 +1,7 @@
 import React from 'react';
 import BookThumbCard from '../components/BookThumbCard';
 
-const SearchResultsContainer = () => {
+const BookListContainer = () => {
 	return (
 		<div>
 			<BookThumbCard />
@@ -12,4 +12,4 @@ const SearchResultsContainer = () => {
 	);
 };
 
-export default SearchResultsContainer;
+export default BookListContainer;

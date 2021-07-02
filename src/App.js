@@ -15,7 +15,7 @@ function App() {
 				<NavBar />
 				<Searchbar />
 				<Switch>
-					<Route path='/'>
+					<Route exact path='/'>
 						<HomeContainer mode={mode} />
 					</Route>
 					<Route path='/books'>

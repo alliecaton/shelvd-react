@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const RandomBook = () => {
-	const [bookData, setState] = useState({
+	const [bookData] = useState({
 		volumeInfo: {
 			title: 'default title',
 		},
