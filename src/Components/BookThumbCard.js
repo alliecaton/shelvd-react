@@ -9,7 +9,11 @@ const BookThumbCard = props => {
 					<div className='book-thumb'>
 						<h3>{props.title}</h3>
 						<p>{props.author}</p>
-						<img src={props.img} />
+						<img
+							className='image-thumbnail'
+							alt={`${props.title}`}
+							src={props.img}
+						/>
 					</div>
 				</li>
 				<li></li>

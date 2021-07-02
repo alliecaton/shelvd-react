@@ -52,6 +52,12 @@ button {
 	animation: 3s ease-in-out 0ms 1 fadein;
 }
 
+.image-thumbnail {
+	padding: 1px;
+	background: rgb(247, 221, 153);
+	border-radius: 10px;
+}
+
 .book-thumb:hover {
 	cursor: pointer;
 	box-shadow: 0 0.5rem 1rem rgba(245, 220, 155, 0.5);
