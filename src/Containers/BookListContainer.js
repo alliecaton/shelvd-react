@@ -1,5 +1,5 @@
 import React from 'react';
-import BookThumbCard from '../Components/BookThumbCard';
+import BookThumbCard from '../components/BookThumbCard';
 
 const SearchResultsContainer = () => {
 	return (

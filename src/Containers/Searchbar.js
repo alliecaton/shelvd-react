@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 
 const Searchbar = () => {
-	const [query, setState] = useState('');
+	const [state, setState] = useState({
+		query: '',
+		queryResults: [],
+	});
 
 	const handleInput = e => {
-		setState(e.target.value);
-		console.log(query);
+		setState(prevState => ({
+			...prevState,
+			query: e.target.value,
+		}));
+		console.log(state.query);
 	};
 
 	const handleSubmit = e => {
@@ -15,14 +21,17 @@ const Searchbar = () => {
 		)
 			.then(resp => resp.json())
 			.then(json => {
-				console.log(json);
+				setState(prevState => ({
+					...prevState,
+					queryResults: json.items,
+				}));
 			});
 	};
-
+	console.log(state);
 	return (
 		<>
 			<form className='searchbar'>
-				<input type='text' onChange={e => handleInput(e)} value={query} />
+				<input type='text' onChange={e => handleInput(e)} value={state.query} />
 				<input type='submit' value='Submit' onClick={e => handleSubmit(e)} />
 			</form>
 		</>

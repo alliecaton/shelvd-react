@@ -1,9 +1,10 @@
 import './App.css';
 import React, { useState } from 'react';
-import HomeContainer from './Containers/HomeContainer';
-import NavBar from './Components/NavBar.js';
+import HomeContainer from './containers/HomeContainer';
+import NavBar from './components/NavBar.js';
+import Searchbar from './containers/Searchbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import BookListContainer from './Containers/BookListContainer';
+import BookListContainer from './containers/BookListContainer';
 
 function App() {
 	const [mode] = useState('light');
@@ -12,6 +13,7 @@ function App() {
 		<div className='App'>
 			<Router>
 				<NavBar />
+				<Searchbar />
 				<Switch>
 					<Route path='/'>
 						<HomeContainer mode={mode} />

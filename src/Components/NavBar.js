@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../images/book.png';
-import Search from './Searchbar';
+
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -17,9 +17,7 @@ const NavBar = () => {
 				<Link to='/books'>
 					<li className='navbar'>Books</li>
 				</Link>
-				<li>
-					<Search />
-				</li>
+				<li></li>
 			</ul>
 		</div>
 	);
