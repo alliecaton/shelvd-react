@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import HomeContainer from './containers/HomeContainer';
 import NavBar from './components/NavBar.js';
-import Searchbar from './containers/Searchbar';
+import SearchContainer from './containers/SearchContainer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BookListContainer from './containers/BookListContainer';
 
@@ -13,7 +13,7 @@ function App() {
 		<div className='App'>
 			<Router>
 				<NavBar />
-				<Searchbar />
+				<SearchContainer />
 				<Switch>
 					<Route exact path='/'>
 						<HomeContainer mode={mode} />
