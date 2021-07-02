@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import BookListContainer from '../containers/BookListContainer'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Searchbar = () => {
+	let history = useHistory()
 	const [state, setState] = useState({
 		query: '',
 		queryResults: [],
@@ -18,17 +19,16 @@ const Searchbar = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault()
+		history.push('/books')
 	}
 
 	return (
-		<div>
-			<form className='searchbar'>
+		<>
+			<form className='searchbar' onSubmit={e => handleSubmit(e)}>
 				<input type='text' onChange={e => handleInput(e)} value={state.query} />
-				<Link to='/books'>
-					<input type='submit' value='Submit' onClick={e => handleSubmit(e)} />
-				</Link>
+				<input type='submit' value='Submit' />
 			</form>
-		</div>
+		</>
 	)
 }
 
