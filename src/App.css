@@ -9,6 +9,15 @@ button {
 	border: none;
 }
 
+a {
+	color: rgb(14, 186, 189);
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgba(0, 145, 255);
+}
+
 .logo-text {
 	display: inline;
 	vertical-align: middle;
@@ -19,6 +28,8 @@ button {
 }
 
 .home-container {
+	padding-top: 2rem;
+	width: 100%;
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: 0.5fr auto;
