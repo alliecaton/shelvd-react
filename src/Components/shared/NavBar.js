@@ -9,13 +9,18 @@ const NavBar = () => {
 			<ul>
 				<li>
 					{/* <img className='logo-img' src={image} alt='book logo' /> */}
-					<h2 className='logo-text'>Shelvd</h2>
+					<Link to='/'>
+						<h2 className='logo-text'>Shelvd</h2>
+					</Link>
 				</li>
+				<Link to='/signup'>
+					<li className='navbar'>Sign Up</li>
+				</Link>
+				<Link to='/Login'>
+					<li className='navbar'>Login</li>
+				</Link>
 				<Link to='/books'>
 					<li className='navbar'>Books</li>
-				</Link>
-				<Link to='/'>
-					<li className='navbar'>Home</li>
 				</Link>
 				<li className='navbar'>
 					<SearchContainer />

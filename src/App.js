@@ -1,7 +1,8 @@
 import './App.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import HomeContainer from './containers/HomeContainer'
 import NavBar from './components/shared/NavBar.js'
+import BookContainer from './containers/BookContainer'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import BookListContainer from './containers/BookListContainer'
@@ -13,15 +14,17 @@ function App() {
 	return (
 		<div className='App' data-theme={dark ? 'dark' : 'light'}>
 			<Router>
-				<div className='header'>
-					<NavBar />
-				</div>
+				<NavBar />
+
 				<Switch>
 					<Route exact path='/'>
 						<HomeContainer dark={dark} changeMode={changeMode} />
 					</Route>
 					<Route path='/books'>
 						<BookListContainer />
+					</Route>
+					<Route path='/books/:isbn'>
+						<BookContainer />
 					</Route>
 				</Switch>
 			</Router>

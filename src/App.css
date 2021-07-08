@@ -26,6 +26,7 @@ button {
 }
 
 .book-container {
+	width: 100%;
 	padding-top: 2rem;
 	display: flex;
 	flex-flow: row wrap;
@@ -100,7 +101,7 @@ button {
 /* navbar classes */
 
 .navbar {
-	margin: 2em;
+	margin: 1em;
 	vertical-align: middle;
 	float: right;
 }
@@ -108,12 +109,11 @@ button {
 .header {
 	display: inline;
 }
-
-.navbar-parent {
+/* 
+/* .navbar-parent {
 	margin: 10px;
-}
-
-input[type='text'] {
+} */
+*/ input[type='text'] {
 	-webkit-appearance: none;
 	padding: 5px;
 	border-radius: 5px;

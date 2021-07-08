@@ -22,6 +22,7 @@ const BookListContainer = props => {
 							? result.volumeInfo.imageLinks.smallThumbnail
 							: 'no image'
 					}
+					isbn={result.volumeInfo.industryIdentifiers[0].identifier}
 				/>
 			))
 		}
