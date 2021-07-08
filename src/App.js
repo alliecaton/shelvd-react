@@ -15,16 +15,13 @@ function App() {
 		<div className='App' data-theme={dark ? 'dark' : 'light'}>
 			<Router>
 				<NavBar />
-
 				<Switch>
 					<Route exact path='/'>
 						<HomeContainer dark={dark} changeMode={changeMode} />
 					</Route>
-					<Route path='/books'>
+					<Route path='/books/:isbn' component={BookContainer}></Route>
+					<Route exact path='/books'>
 						<BookListContainer />
-					</Route>
-					<Route path='/books/:isbn'>
-						<BookContainer />
 					</Route>
 				</Switch>
 			</Router>

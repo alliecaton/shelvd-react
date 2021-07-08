@@ -1,7 +1,8 @@
 import React from 'react'
 
-const BookContainer = () => {
-	return <div>this is a book</div>
+const BookContainer = props => {
+	console.log(props)
+	return <div>book</div>
 }
 
 export default BookContainer
