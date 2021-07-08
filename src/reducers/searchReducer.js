@@ -7,6 +7,12 @@ const searchReducer = (
 	action
 ) => {
 	switch (action.type) {
+		case 'LOADING_RESULTS':
+			return {
+				...state,
+				loading: true,
+			}
+
 		case 'GET_RESULTS':
 			return {
 				...state,

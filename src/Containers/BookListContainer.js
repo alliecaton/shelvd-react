@@ -1,23 +1,30 @@
 import React from 'react'
 import BookThumbCard from '../components/BookThumbCard'
 import { connect } from 'react-redux'
+import Loading from '../components/shared/Loading'
 
 const BookListContainer = props => {
 	console.log('book container', props.queryResults)
 
 	const renderResults = () => {
-		return props.queryResults.map(result => (
-			<BookThumbCard
-				key={result.id}
-				title={result.volumeInfo ? result.volumeInfo.title : 'no title'}
-				author={result.volumeInfo ? result.volumeInfo.authors[0] : 'no author'}
-				img={
-					result.volumeInfo
-						? result.volumeInfo.imageLinks.smallThumbnail
-						: 'no link'
-				}
-			/>
-		))
+		if (props.loading) {
+			return <Loading />
+		} else {
+			return props.queryResults.map(result => (
+				<BookThumbCard
+					key={result.id}
+					title={result.volumeInfo ? result.volumeInfo.title : 'no title'}
+					author={
+						result.volumeInfo.authors ? result.volumeInfo.authors[0] : ' '
+					}
+					img={
+						result.volumeInfo
+							? result.volumeInfo.imageLinks.smallThumbnail
+							: 'no link'
+					}
+				/>
+			))
+		}
 	}
 
 	return <div className='book-container'>{renderResults()}</div>
@@ -25,6 +32,7 @@ const BookListContainer = props => {
 
 const mapStateToProps = state => ({
 	queryResults: state.searchReducer.queryResults,
+	loading: state.searchReducer.loading,
 })
 
 export default connect(mapStateToProps)(BookListContainer)
