@@ -102,6 +102,15 @@ button {
 .navbar {
 	margin: 2em;
 	vertical-align: middle;
+	float: right;
+}
+
+.header {
+	display: inline;
+}
+
+.navbar-parent {
+	margin: 10px;
 }
 
 input[type='text'] {
@@ -110,4 +119,8 @@ input[type='text'] {
 	border-radius: 5px;
 	box-shadow: none;
 	border: solid 0.5px;
+}
+
+.search-parent {
+	float: right;
 }

@@ -1,12 +1,13 @@
 import React from 'react'
 import Searchbar from '../components/shared/Searchbar'
-// import BookListContainer from './BookListContainer';
+
+// rendered in navbar component
 
 const SearchContainer = () => {
 	return (
-		<div>
+		<>
 			<Searchbar />
-		</div>
+		</>
 	)
 }
 
