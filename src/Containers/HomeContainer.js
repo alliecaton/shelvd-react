@@ -1,11 +1,10 @@
 import React from 'react'
-import RandomBook from '../components/RandomBook'
 
 const HomeContainer = ({ dark, changeMode }) => {
 	return (
 		<div className='home-container'>
-			<button onClick={changeMode}>dark mode</button>
-			<RandomBook />
+			home page
+			{/* <button onClick={changeMode}>dark mode</button> */}
 		</div>
 	)
 }

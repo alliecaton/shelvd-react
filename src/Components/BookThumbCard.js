@@ -17,7 +17,6 @@ const BookThumbCard = props => {
 							/>
 						</div>
 					</li>
-					<li></li>
 				</ul>
 			</Link>
 		</div>
