@@ -5,6 +5,7 @@ import Loading from '../components/shared/Loading'
 
 const BookListContainer = props => {
 	console.log('book container', props.queryResults)
+	console.log('loading', props.loading)
 
 	const renderResults = () => {
 		if (props.loading) {
