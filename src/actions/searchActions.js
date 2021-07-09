@@ -3,10 +3,19 @@ export const fetchResults = query => {
 		fetch(`http://localhost:3001/results/${query}`)
 			.then(r => r.json())
 			.then(json => {
-				console.log('returned json', json.results)
 				const data = { query: query, json: json.results }
-				console.log(json)
 				dispatch({ type: 'GET_RESULTS', payload: data })
+			})
+	}
+}
+
+export const fetchShow = isbn => {
+	return dispatch => {
+		fetch(`http://localhost:3001/results/${isbn}`)
+			.then(r => r.json())
+			.then(json => {
+				const data = { isbn: isbn, json: json.results }
+				dispatch({ type: 'GET_SHOW', payload: data })
 			})
 	}
 }
