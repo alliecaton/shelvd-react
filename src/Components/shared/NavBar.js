@@ -1,5 +1,4 @@
 import React from 'react'
-import image from '../../images/book.png'
 import { Link } from 'react-router-dom'
 import SearchContainer from '../../containers/SearchContainer'
 

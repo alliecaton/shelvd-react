@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import Loading from '../components/shared/Loading'
 
 const BookListContainer = props => {
-	console.log('book container', props.queryResults)
-	console.log('loading', props.loading)
-
+	console.log('rendered')
 	const renderResults = () => {
 		if (props.loading) {
 			return <Loading />
@@ -23,7 +21,11 @@ const BookListContainer = props => {
 							? result.volumeInfo.imageLinks.smallThumbnail
 							: 'no image'
 					}
-					isbn={result.volumeInfo.industryIdentifiers[0].identifier}
+					isbn={
+						result.volumeInfo.industryIdentifiers
+							? result.volumeInfo.industryIdentifiers[0].identifier
+							: 'no identifier'
+					}
 				/>
 			))
 		}
