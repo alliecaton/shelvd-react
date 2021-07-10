@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import BookShowCard from '../components/BookShowCard'
 
 const BookContainer = props => {
 	const [book, setState] = useState({
@@ -21,9 +22,9 @@ const BookContainer = props => {
 				setState(prevState => ({
 					...prevState,
 					title: data.json.items[0].volumeInfo.title,
-					authors: data.json.items[0].volumeInfo.authors,
+					authors: data.json.items[0].volumeInfo.authors[0],
 					description: data.json.items[0].volumeInfo.description,
-					img: data.json.items[0].volumeInfo.imageLinks.smallThumbnail,
+					img: data.json.items[0].volumeInfo.imageLinks.thumbnail,
 				}))
 				console.log(data)
 			})
@@ -31,12 +32,12 @@ const BookContainer = props => {
 
 	return (
 		<div>
-			<div>
-				<h2>{book.title}</h2>
-				<h5>{book.authors[0]}</h5>
-				<p>{book.description}</p>
-				<img src={book.img} alt='book cover' />
-			</div>
+			<BookShowCard
+				title={book.title}
+				author={book.authors}
+				description={book.description}
+				img={book.img}
+			/>
 		</div>
 	)
 }

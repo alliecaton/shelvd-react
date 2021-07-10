@@ -135,3 +135,32 @@ a:hover {
 .search-parent {
 	float: right;
 }
+
+.flex-box-parent {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+.book-info {
+	padding-left: 3%;
+}
+
+.book-show-card {
+	box-shadow: 0 0 2rem rgba(0, 145, 255, 0.1);
+	padding: 2rem;
+	margin: 2rem;
+	width: auto;
+	height: auto;
+	background-color: white;
+	border-radius: 1.75rem;
+	animation: 3s ease-in-out 0ms 1 fadein;
+}
+
+.book-show-containers {
+	margin: 3%;
+}
+
+.book-description {
+	width: 50%;
+}
