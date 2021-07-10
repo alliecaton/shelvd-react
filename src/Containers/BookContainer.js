@@ -1,10 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-// import { fetchShow } from '../actions/searchActions'
 
 const BookContainer = props => {
-	// console.log(props.bookObject, 'from store')
 	const [book, setState] = useState({
 		title: '',
 		authors: '',
@@ -14,7 +12,6 @@ const BookContainer = props => {
 	})
 
 	useEffect(() => {
-		// props.fetchShow(book.isbn)
 		fetch(`http://localhost:3001/books/${book.isbn}`)
 			.then(r => r.json())
 			.then(json => {
@@ -43,10 +40,6 @@ const BookContainer = props => {
 		</div>
 	)
 }
-
-// const mapDispatchToProps = dispatch => ({
-// 	fetchShow: isbn => dispatch(fetchShow(isbn)),
-// })
 
 const mapStateToProps = state => ({
 	results: state.searchReducer.queryResults,
