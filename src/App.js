@@ -20,9 +20,10 @@ function App() {
 						<HomeContainer dark={dark} changeMode={changeMode} />
 					</Route>
 					<Route path='/books/:isbn' component={BookContainer}></Route>
-					<Route exact path='/results/:query'>
-						<BookListContainer />
-					</Route>
+					<Route
+						exact
+						path='/results/:query'
+						component={BookListContainer}></Route>
 				</Switch>
 			</Router>
 		</div>

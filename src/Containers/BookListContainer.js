@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import BookThumbCard from '../components/BookThumbCard'
 import { connect } from 'react-redux'
 import Loading from '../components/shared/Loading'
+import { fetchResults } from '../actions/searchActions'
 
 const BookListContainer = props => {
-	console.log('rendered')
+	console.log(props)
+	const [query] = useState(props.match.params.query)
+
+	useEffect(() => {
+		props.fetchResults(query)
+	}, [])
 
 	const renderResults = () => {
 		if (props.loading) {
@@ -40,4 +46,8 @@ const mapStateToProps = state => ({
 	loading: state.searchReducer.loading,
 })
 
-export default connect(mapStateToProps)(BookListContainer)
+const mapDispatchToProps = dispatch => ({
+	fetchResults: query => dispatch(fetchResults(query)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookListContainer)
