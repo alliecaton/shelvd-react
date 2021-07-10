@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 // import { fetchShow } from '../actions/searchActions'
 
 const BookContainer = props => {
-	console.log(props.bookObject, 'from store')
+	// console.log(props.bookObject, 'from store')
 	const [book, setState] = useState({
 		title: '',
 		authors: '',
@@ -19,13 +19,14 @@ const BookContainer = props => {
 			.then(r => r.json())
 			.then(json => {
 				const data = { isbn: book.isbn, json: json.results }
-				console.log(data)
+				console.log('this is the data', data)
+				console.log(data.json.items[0].volumeInfo.title)
 				setState(prevState => ({
 					...prevState,
-					title: props.bookObject.volumeInfo.title,
-					authors: props.bookObject.volumeInfo.authors,
-					description: props.bookObject.volumeInfo.description,
-					img: props.bookObject.volumeInfo.imageLinks.smallThumbnail,
+					title: data.json.items[0].volumeInfo.title,
+					authors: data.json.items[0].volumeInfo.authors,
+					description: data.json.items[0].volumeInfo.description,
+					img: data.json.items[0].volumeInfo.imageLinks.smallThumbnail,
 				}))
 				console.log(data)
 			})
