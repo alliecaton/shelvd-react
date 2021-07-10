@@ -18,6 +18,7 @@ export const fetchShow = isbn => {
 			.then(r => r.json())
 			.then(json => {
 				const data = { isbn: isbn, json: json.results }
+				console.log(data)
 				dispatch({ type: 'LOADING', payload: false })
 				dispatch({ type: 'GET_SHOW', payload: data })
 			})
