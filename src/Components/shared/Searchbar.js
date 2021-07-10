@@ -8,10 +8,6 @@ const Searchbar = props => {
 	let history = useHistory()
 	const [query, setQuery] = useState('')
 
-	const handleInput = e => {
-		setQuery(e.target.value)
-	}
-
 	const handleSubmit = e => {
 		e.preventDefault()
 		history.push(`/results/${query}`)
@@ -23,7 +19,11 @@ const Searchbar = props => {
 	return (
 		<>
 			<form className='searchbar' onSubmit={e => handleSubmit(e)}>
-				<input type='text' onChange={e => handleInput(e)} value={query} />
+				<input
+					type='text'
+					onChange={e => setQuery(e.target.value)}
+					value={query}
+				/>
 				{/* <Link to={`/results/${query}`}> */}
 				<input type='submit' value='Submit' />
 				{/* </Link> */}

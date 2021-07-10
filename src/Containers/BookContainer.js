@@ -12,21 +12,13 @@ const BookContainer = props => {
 		isbn: props.match.params.isbn,
 	})
 
-	// useEffect(() => {
-	// 	props.fetchShow(book.isbn)
-	// 	setState(prevState => ({
-	// 		...prevState,
-	// 		book: '',
-	// 	}))
-
-	// 	return setState({
-	// 		title: '',
-	// 		authors: '',
-	// 		description: '',
-	// 		img: '',
-	// 		isbn: props.match.params.isbn,
-	// 	})
-	// }, [props, book.isbn])
+	useEffect(() => {
+		props.fetchShow(book.isbn)
+		setState(prevState => ({
+			...prevState,
+			book: '',
+		}))
+	}, [])
 
 	return <div>book</div>
 }

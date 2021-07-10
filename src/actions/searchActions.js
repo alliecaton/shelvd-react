@@ -5,8 +5,8 @@ export const fetchResults = query => {
 			.then(r => r.json())
 			.then(json => {
 				const data = { query: query, json: json.results }
-				dispatch({ type: 'LOADING', payload: false })
 				dispatch({ type: 'GET_RESULTS', payload: data })
+				dispatch({ type: 'LOADING', payload: false })
 			})
 	}
 }
@@ -19,8 +19,8 @@ export const fetchShow = isbn => {
 			.then(json => {
 				const data = { isbn: isbn, json: json.results }
 				console.log(data)
-				dispatch({ type: 'LOADING', payload: false })
 				dispatch({ type: 'GET_SHOW', payload: data })
+				dispatch({ type: 'LOADING', payload: false })
 			})
 	}
 }
